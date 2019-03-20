@@ -4335,7 +4335,7 @@ void CalculateAdsorbateBondHessian(REAL *Energy,REAL* Gradient,REAL_MATRIX Hessi
         HessianOrientationStrain(HessianMatrix,index_i2,index_j2,index1,index2,DF,DDF,posA,comA,posB,comB,dr);
 
         HessianAtomicPositionPosition(HessianMatrix,index_i,index_j,DF,DDF,dr,1.0);
-        HessianAtomicStrainStrain(HessianMatrix,index_i,index_j,DF,DDF,dr,posA,comA,posB,comB);
+        HessianAtomicStrainStrain(HessianMatrix,DF,DDF,dr,posA,comA,posB,comB);
       }
     }
   }
@@ -4582,7 +4582,7 @@ void CalculateCationBondHessian(REAL *Energy,REAL* Gradient,REAL_MATRIX HessianM
         HessianOrientationStrain(HessianMatrix,index_i2,index_j2,index1,index2,DF,DDF,posA,comA,posB,comB,dr);
 
         HessianAtomicPositionPosition(HessianMatrix,index_i,index_j,DF,DDF,dr,1.0);
-        HessianAtomicStrainStrain(HessianMatrix,index_i,index_j,DF,DDF,dr,posA,comA,posB,comB);
+        HessianAtomicStrainStrain(HessianMatrix,DF,DDF,dr,posA,comA,posB,comB);
       }
     }
   }
@@ -9082,7 +9082,7 @@ void CalculateAdsorbateIntraVDWHessian(REAL *Energy,REAL* Gradient,REAL_MATRIX H
           HessianOrientationStrain(HessianMatrix,index_i2,index_j2,index1,index2,DF,DDF,posA,comA,posB,comB,dr);
 
           HessianAtomicPositionPosition(HessianMatrix,index_i,index_j,DF,DDF,dr,1.0);
-          HessianAtomicStrainStrain(HessianMatrix,index_i,index_j,DF,DDF,dr,posA,comA,posB,comB);
+          HessianAtomicStrainStrain(HessianMatrix,DF,DDF,dr,posA,comA,posB,comB);
         }
       }
     }
@@ -9218,7 +9218,7 @@ void CalculateCationIntraVDWHessian(REAL *Energy,REAL* Gradient,REAL_MATRIX Hess
           HessianOrientationStrain(HessianMatrix,index_i2,index_j2,index1,index2,DF,DDF,posA,comA,posB,comB,dr);
 
           HessianAtomicPositionPosition(HessianMatrix,index_i,index_j,DF,DDF,dr,1.0);
-          HessianAtomicStrainStrain(HessianMatrix,index_i,index_j,DF,DDF,dr,posA,comA,posB,comB);
+          HessianAtomicStrainStrain(HessianMatrix,DF,DDF,dr,posA,comA,posB,comB);
         }
       }
     }
@@ -9366,7 +9366,7 @@ void CalculateAdsorbateIntraCoulombHessian(REAL *Energy,REAL* Gradient,REAL_MATR
         HessianOrientationStrain(HessianMatrix,index_i2,index_j2,index1,index2,DF,DDF,posA,comA,posB,comB,dr);
 
         HessianAtomicPositionPosition(HessianMatrix,index_i,index_j,DF,DDF,dr,1.0);
-        HessianAtomicStrainStrain(HessianMatrix,index_i,index_j,DF,DDF,dr,posA,comA,posB,comB);
+        HessianAtomicStrainStrain(HessianMatrix,DF,DDF,dr,posA,comA,posB,comB);
       }
     }
   }
@@ -9513,7 +9513,7 @@ void CalculateCationIntraCoulombHessian(REAL *Energy,REAL* Gradient,REAL_MATRIX 
         HessianOrientationStrain(HessianMatrix,index_i2,index_j2,index1,index2,DF,DDF,posA,comA,posB,comB,dr);
 
         HessianAtomicPositionPosition(HessianMatrix,index_i,index_j,DF,DDF,dr,1.0);
-        HessianAtomicStrainStrain(HessianMatrix,index_i,index_j,DF,DDF,dr,posA,comA,posB,comB);
+        HessianAtomicStrainStrain(HessianMatrix,DF,DDF,dr,posA,comA,posB,comB);
       }
     }
   }

@@ -85,6 +85,10 @@
 // *) MC-moves store the current structure factors using 'SaveCurrentEwaldStructureFactors()'. If the move is not accepted the
 //    structure factors are restored using 'RetrieveStoredEwaldStructureFactors'.
 
+#if defined (__EMSCRIPTEN__)
+extern int numberOfReactionMoleculesForComponent(int comp);
+extern void bubble_sort(int list[], int n);
+#endif
 
 // the trial positions for translation and rotation
 VECTOR **TrialPosition;

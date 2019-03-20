@@ -7983,6 +7983,8 @@ void ReadRestartOutput(FILE* FilePtr)
        // output-file exist
     #if defined (__APPLE__)
       if(((OutputFilePtr[i]=fopen(buffer2,"r+"))!=NULL)||(pos<0))
+    #elif defined (__EMSCRIPTEN__)
+      if(((OutputFilePtr[i]=fopen(buffer2,"r+"))!=NULL)||((off_t)&pos<0))
     #else
       if(((OutputFilePtr[i]=fopen(buffer2,"r+"))!=NULL)||(pos.__pos<0))
     #endif
@@ -8007,6 +8009,8 @@ void ReadRestartOutput(FILE* FilePtr)
         
       #if defined (__APPLE__)
         if(feof(OutputFilePtr[i])||(pos>sz))
+      #elif defined (__EMSCRIPTEN__)
+        if(feof(OutputFilePtr[i])||((off_t)&pos>sz))
       #else
         if(feof(OutputFilePtr[i])||(pos.__pos>sz))
       #endif
@@ -8014,6 +8018,8 @@ void ReadRestartOutput(FILE* FilePtr)
           // the position is beyond the file' end
         #if defined (__APPLE__)
           fprintf(stderr,"Failed to Reposition output-file at %lld ( beyond file-length %ld)\n",pos,sz);
+        #elif defined (__EMSCRIPTEN__)
+          fprintf(stderr,"Failed to Reposition output-file at %d ( beyond file-length %ld)\n",(off_t)&pos,sz);
         #else
           fprintf(stderr,"Failed to Reposition output-file at %ld ( beyond file-length %ld)\n",pos.__pos,sz);
         #endif
@@ -8026,6 +8032,8 @@ void ReadRestartOutput(FILE* FilePtr)
           fsetpos(OutputFilePtr[i],&pos);
         #if defined (__APPLE__)
           fprintf(stderr,"Succesfully repositioned output-file of size %ld to position %lld\n",sz,pos);
+        #elif defined (__EMSCRIPTEN__)
+          fprintf(stderr,"Succesfully repositioned output-file of size %ld to position %d\n",sz,(off_t)&pos);
         #else
           fprintf(stderr,"Succesfully repositioned output-file of size %ld to position %ld\n",sz,pos.__pos);
         #endif

@@ -44,7 +44,7 @@ void HessianCenterOfMassStrain(REAL_MATRIX HessianMatrix,INT_VECTOR3 index_i,INT
 void HessianOrientationStrain(REAL_MATRIX HessianMatrix,INT_VECTOR3 index_i2,INT_VECTOR3 index_j2,int index1,int index2,
                   REAL f1,REAL f2,VECTOR posA,VECTOR comA,VECTOR posB,VECTOR comB,VECTOR dr);
 
-void HessianAtomicStrainStrain(REAL_MATRIX HessianMatrix,INT_VECTOR3 index_i,INT_VECTOR3 index_j,
+void HessianAtomicStrainStrain(REAL_MATRIX HessianMatrix,
                        REAL f1,REAL f2,VECTOR dr,VECTOR posA,VECTOR comA,VECTOR posB,VECTOR comB);
 
 

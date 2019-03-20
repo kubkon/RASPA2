@@ -20829,7 +20829,7 @@ int CalculateEwaldFourierDerivatives(REAL *Energy,REAL* Gradient,REAL_MATRIX Hes
               HessianOrientationStrain(HessianMatrix,index_i2,index_j2,index1,index2,DF,DDF,posA,comA,posB,comB,dr);
 
               HessianAtomicPositionPosition(HessianMatrix,index_i,index_j,DF,DDF,dr,1.0);
-              HessianAtomicStrainStrain(HessianMatrix,index_i,index_j,DF,DDF,dr,posA,comA,posB,comB);
+              HessianAtomicStrainStrain(HessianMatrix,DF,DDF,dr,posA,comA,posB,comB);
             }
           }
         }
@@ -20979,7 +20979,7 @@ int CalculateEwaldFourierDerivatives(REAL *Energy,REAL* Gradient,REAL_MATRIX Hes
               HessianOrientationStrain(HessianMatrix,index_i2,index_j2,index1,index2,DF,DDF,posA,comA,posB,comB,dr);
 
               HessianAtomicPositionPosition(HessianMatrix,index_i,index_j,DF,DDF,dr,1.0);
-              HessianAtomicStrainStrain(HessianMatrix,index_i,index_j,DF,DDF,dr,posA,comA,posB,comB);
+              HessianAtomicStrainStrain(HessianMatrix,DF,DDF,dr,posA,comA,posB,comB);
             }
           }
         }
